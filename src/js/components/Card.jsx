@@ -1,20 +1,31 @@
-import React from 'react';
+import React from "react";
 
-const Card = (props) => {
+const Card = ({ title, text, image }) => {
   return (
-    <div className="card m-3" style={{ width: '100%', maxWidth: '18rem' }}>
-      <img
-        className="card-img-top"
-        src={props.image}
-        alt="Card image cap"
-        style={{ height: '12rem', objectFit: 'cover' }}
-      />
-      <div className="card-body">
-        <h5 className="card-title">{props.title}</h5>
-        <p className="card-text">{props.text}</p>
-        <a href="#" className="btn btn-primary">
+    <div className="card h-100 shadow-sm card-hover border-0 overflow-hidden">
+      <div className="ratio ratio-4x3">
+        <img
+          src={image}
+          className="card-img-top"
+          alt={title}
+          style={{ objectFit: "cover" }}
+          loading="lazy"
+        />
+      </div>
+
+      <div className="card-body d-flex flex-column text-center">
+        <h5 className="card-title fw-semibold mb-2">{title}</h5>
+
+        <p className="card-text text-secondary small flex-grow-1 clamp-3">
+          {text}
+        </p>
+
+        <button
+          type="button"
+          className="btn btn-primary btn-sm mt-3 align-self-center px-4"
+        >
           See more
-        </a>
+        </button>
       </div>
     </div>
   );

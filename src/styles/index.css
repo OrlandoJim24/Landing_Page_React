@@ -9,3 +9,23 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Para que los textos queden parejos entre cards */
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Controla el ancho del “hero” */
+.hero-max {
+  max-width: 980px;
+}
